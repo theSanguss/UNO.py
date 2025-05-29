@@ -1,1 +1,1 @@
-Can you read this README?
+A CLI-based Python recreation of UNO.
