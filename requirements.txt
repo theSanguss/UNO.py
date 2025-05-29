@@ -1,0 +1,4 @@
+rich
+pyfiglet
+keyboard
+cursor
