@@ -16,6 +16,11 @@ pip install -r requirements.txt
 python main.py
 ```
 
+> [!Warning]\
+> This program has not yet been tested for MacOS and Linux.
+>
+> Please do file an issue if you encounter anything unexpected.
+
 ## How to operate?
 
 This is a CLI-based application, so entering in inputs as you normally would in a terminal is pretty much all you need to do.
@@ -40,7 +45,23 @@ No. It wouldn't be all too hard to implement, but from a gameplay standpoint, it
 
 The AI players in this are biased by a numerical property called their 'intellect'. I say 'biased', as a large part of their logic is based on random chance, and intellect only serves to vary this chance. In some cases, AIs with the lowest intellect are barred from making intelligent decisions.
 
-#### Well, that's about all I have to tell you. Here's some more gameplay screenshots to get you interested...
+## Can I convert this into an EXE file via PyInstaller?
+
+Yes, I have done this before and feel obligated to let you know that the [pyfiglet library](https://github.com/pwaller/pyfiglet/) does **_not_** like working with PyInstaller as is, and most of the things you'll find online to fix (like hooks) this are kinda a pain in the ass to figure out by yourself. However, running the below command solved this issue completely for me, and will probably work for others as well:
+
+```bash
+pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[insert filepath here]\site-packages\pyfiglet\fonts;.\pyfiglet\fonts" main.py
+```
+
+> [!Note]\
+> Remember to replace _[insert filepath here]_ with the path to the site-packages directory for Python on your system.
+
+> [!Warning]\
+> Again, this command has _not_ been tested on MacOS and Linux, and I'm fairly sure .ico files are only supported as icons on Windows.
+>
+> So, exercise caution when running this commmand on a non-Windows operating system.
+
+### Well, that's about all I have to tell you. Here's some more gameplay screenshots to get you interested...
 
 ![UNO! declared & turn order reversed](/Gameplay%20Images/declared_uno_and%20reversed_turn_order.png)
 
