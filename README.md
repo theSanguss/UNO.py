@@ -1,6 +1,6 @@
 ![Logo](/UNO_icon_new.ico)
 
-_My first OOP Python project. Runs fully within the terminal._
+_My first OOP Python project. Runs fully within the terminal. Made with Python 3.12._
 
 > [!Note]\
 > Despite the name, UNO.py isn't actually a single file, but it's nicer to call it that. :P
@@ -27,7 +27,7 @@ This is a CLI-based application, so entering in inputs as you normally would in 
 
 Most inputs are self-explanatory, and those that aren't are specified and detailed in-game.
 
-## Is this just another boring CLI?
+## Is this just another boring CLI game?
 
 Thankfully not. For this projects makes extensive use of the wonderful [Rich library](https://github.com/Textualize/rich/).
 
