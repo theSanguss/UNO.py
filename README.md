@@ -94,3 +94,5 @@ pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[ins
 <br>
 
 ![Victory Screen](/Gameplay%20Images/lesgo_i_win.png)
+
+(￣ o ￣) . z Z
