@@ -1,6 +1,6 @@
 ![Logo](/UNO_icon_new.ico)
 
-**My first OOP Python project. Runs fully within the terminal.**
+_My first OOP Python project. Runs fully within the terminal._
 
 > [!Note]\
 > Despite the name, UNO.py isn't actually a single file, but it's nicer to call it that. :P
