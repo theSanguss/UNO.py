@@ -4,7 +4,7 @@
 
 <i>
 <ul>
-<li>🚀 My first OOP Python project, as well as my first GitHub repo!
+<li>🚀 My first OOP Python project, as well as my first GitHub repository! (ignoring config repo)
 <li>📟 Runs fully within the terminal, nothing extra.
 <li>🐍 Made with Python (version 3.12).
 </ul>
