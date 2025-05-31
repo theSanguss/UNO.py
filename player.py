@@ -7,8 +7,8 @@ class Player:
         self.uno = False
 
     def __str__(self):
-        return f"{self.name}{" " * (11 - len(self.name))}:{" 🂠" * len(self.hand)}" + \
-        f"{"[gold1 b i] UNO[/gold1 b i]" if self.uno == True else ""}"
+        return f"{self.name}{' ' * (11 - len(self.name))}:{' 🂠' * len(self.hand)}" + \
+        f"{'[gold1 b i] UNO[/gold1 b i]' if self.uno == True else ''}"
 
 
 class AIPlayer(Player):
