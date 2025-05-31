@@ -1,1 +1,1 @@
-A CLI-based Python recreation of UNO.
+My first OOP Python project.
