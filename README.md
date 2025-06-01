@@ -2,13 +2,9 @@
 
 <br>
 
-<i>
-<ul>
-<li>🚀 My first OOP Python project, as well as my first GitHub repository! (ignoring config repo)
-<li>📟 Runs fully within the terminal, nothing extra.
-<li>🐍 Made with Python (version 3.12).
-</ul>
-</i>
+- 🚀 _My first OOP Python project, as well as my first GitHub repository! (ignoring config repo)_
+- 📟 _Runs fully within the terminal, nothing extra._
+- 🐍 _Made with Python (version 3.12)._
 
 <br>
 
@@ -29,7 +25,7 @@ python main.py
 ```
 
 > [!Warning]\
-> This program has not yet been tested for MacOS and Linux.
+> This program has not yet been tested for MacOS and Linux, and currently, fullscreening the terminal on MacOS and Linux is rather problematic.
 >
 > Please do file an issue if you encounter anything unexpected.
 
@@ -59,7 +55,7 @@ Yes, except for two things - viewing the cards of the player you challenge (isn'
 
 ## Does this support local multiplayer?
 
-No. It wouldn't be all too hard to implement by just adding multiple Player objects, but from a gameplay standpoint, it would be annoying to manange. Feel free to fork this project and try implementing a good Local Multiplayer system. Maybe even have it run on a separate terminal for each non-AI player? Idk.
+No. It wouldn't be all too hard to implement by just adding multiple Player objects, but from a gameplay standpoint, it would be annoying to manange. **Feel free to fork this project and try implementing a good Local Multiplayer system.** Maybe even have it run on a separate terminal for each non-AI player? Idk. Anyway, **contributions are welcome**.
 
 <br>
 
@@ -69,7 +65,7 @@ The AI players in this are biased by a numerical property called their 'intellec
 
 <br>
 
-## Is it viable to convert this into an EXE file using PyInstaller?
+## Is it viable to convert this into an executable file using PyInstaller?
 
 Yes, I have done this before and feel obliged to let you know that the [Pyfiglet library](https://github.com/pwaller/pyfiglet/) does **_not_** like working with PyInstaller as is, and most of the things you'll find online to fix this (like hooks) are kinda a pain in the ass to figure out by yourself. However, running the below command solved this issue completely for me, and will probably work for others as well:
 
@@ -78,14 +74,14 @@ pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[ins
 ```
 
 > [!Note]\
-> Remember to replace _[insert filepath here]_ with the path to the _site-packages_ directory for Python on your system.
+> Remember to replace `[insert filepath here]` with the path to the `site-packages` directory for Python on your system.
 >
-> Make sure to run this command with the terminal directing to the UNO.py directory.
+> Make sure to run this command with the terminal directing to the `UNO.py` directory.
 
 > [!Warning]\
-> Again, this command has _not_ been tested on MacOS and Linux, and I'm fairly sure .ico files are only supported as icons on Windows.
+> Again, this command has _not_ been tested on MacOS and Linux, and I'm fairly sure `.ico` files are only supported as icons on Windows.
 >
-> So, exercise caution when running this command on a non-Windows operating system. Perhaps removing the _--icon_ parameter is all that needs to be done.
+> So, exercise caution when running this command on a non-Windows operating system. Perhaps removing the `--icon` parameter is all that needs to be done.
 
 <br>
 
