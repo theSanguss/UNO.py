@@ -25,9 +25,9 @@ python main.py
 ```
 
 > [!Warning]\
-> This program has not yet been tested for MacOS and Linux, and currently, fullscreening the terminal on MacOS and Linux is rather problematic.
+> This program has not yet been tested for MacOS and Linux, and currently, there are some issues relating to the automatic toggling of fullscreen-mode on these operating systems.
 >
-> Please do file an issue if you encounter anything unexpected.
+> Please do file an issue if you encounter anything unexpected or problematic.
 
 <br>
 
@@ -78,7 +78,7 @@ pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[ins
 >
 > Make sure to run this command with the terminal directing to the `UNO.py` directory.
 
-> [!Warning]\
+> [!Caution]\
 > Again, this command has _not_ been tested on MacOS and Linux, and I'm fairly sure `.ico` files are only supported as icons on Windows.
 >
 > So, exercise caution when running this command on a non-Windows operating system. Perhaps removing the `--icon` parameter is all that needs to be done.
