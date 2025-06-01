@@ -1,6 +1,6 @@
 from rich.console import Console
 from time import sleep
-from keyboard import press
+from pyautogui import press, hotkey, moveTo, size
 from os import system
 from platform import system as os    # Named 'os' to avoid confusion with 'system'
 import cursor
@@ -17,7 +17,7 @@ class InputError(Exception):
 # Properly clears the screen on any terminal/console, unlike console.clear()
 def clear(clear_lines = 0):
     '''
-    Clears the console or terminal. Works for most OS types.
+    Clears the console or terminal. Should work for all major OS types.
 
     Can also clear a given number of lines(from bottom to top), using the *clear_lines* parameter.
     '''
@@ -32,15 +32,24 @@ def clear(clear_lines = 0):
 
 def toggleFullscreen():
     '''
-    Primitive function to toggle fullscreen terminal window.
+    Attempts to automatically toggle fullscreen and move the mouse cursor out of sight.
 
-    Utilises key presses; doesn't account for custom keybinds.
+    If, for **any** reason, it fails to perform this, it prompts the user to do it themselves.
     '''
 
-    if "Darwin" in os():
-        press("fn+f11")
-    else:
-        press("f11")
+    try:
+        screen_width, screen_height = size()
+        moveTo(screen_width - 2, screen_height - 2)    # Moves mouse cursor to bottom-right corner
+        
+        if "Darwin" in os():
+            hotkey("ctrl", "command", "f")
+        else:
+            press("f11")
+            
+    except Exception:
+        cursor.hide()
+        console.input("[orange1][dim]>>>[/dim] [b]PRESS [i]F11/CTRL+CMD+F[/i] TO TOGGLE FULLSCREEN MODE, AND THEN PRESS [i]ENTER[/i] TO CONTINUE ... [/b][/orange1]")
+        print()
 
 # Reusable error handling function for both input and function call, function parameters are passed through **kwargs
 def inputHandler(

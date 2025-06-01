@@ -1,4 +1,4 @@
 rich
 pyfiglet
-keyboard
+pyautogui
 cursor

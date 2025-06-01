@@ -23,8 +23,9 @@ class Game:
 
 
     def start(self):
-        toggleFullscreen()
         clear()
+        toggleFullscreen()
+
         try:
             self.setup()
             clear()
@@ -33,17 +34,18 @@ class Game:
             clear()
             self.victory_screen()
             clear()
+
         except KeyboardInterrupt:    # Triggered by using Ctrl+C (it won't copy shit during runtime)
             # Note: Using Ctrl+Shift+C works for copying instead
             clear()
             cursor.hide()
-            cli.console.print("[orange1][dim]///[/dim] [b]EXITING UNO.PY ... [/b][/orange1]")
+            console.print("[orange1][dim]///[/dim] [b]EXITING UNO.PY ... [/b][/orange1]")
             sleep(1)
             print()
+
         finally:
             cursor.show()
             toggleFullscreen()
-            sleep(0.02)
 
 
     def setup(self):
