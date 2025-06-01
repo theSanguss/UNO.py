@@ -15,12 +15,12 @@ class Card:
 
     def __str__(self):
         def express_value(val):
-            # Keys are reprs, vals are the actual values (alt reverse char -> ⮂)
+            # Keys are reprs, vals are the actual values (alt reverse char -> ⇄)
             val_expressions = {
                 "̲6": "6",
                 "̲9": "9",
                 "🛇": "skip",
-                "⇄": "reverse",
+                "⮂": "reverse",
             }
 
             return val_expressions.get(val, val)
