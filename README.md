@@ -15,7 +15,7 @@
 
 ## How to run?
 
-Enter the following in your terminal:
+Enter the following commands into your terminal:
 
 ```bash
 git clone https://github.com/theSanguss/UNO.py.git
@@ -72,7 +72,7 @@ The AI players in this are biased by a numerical property called their 'intellec
 
 ## Is it viable to convert this into an executable file using PyInstaller?
 
-Yes, I have done this before and feel obliged to let you know that the [Pyfiglet library](https://github.com/pwaller/pyfiglet/) does **_not_** like working with PyInstaller as is, and most of the things you'll find online to fix this (like hooks) are kinda a pain in the ass to figure out by yourself. However, running the below command solved this issue completely for me, and will probably work for others as well:
+Yes, I have done this before and feel obliged to let you know that the [Pyfiglet library](https://github.com/pwaller/pyfiglet/) does **_not_** like working with [PyInstaller](https://github.com/pyinstaller/pyinstaller/) as is, and most of the things you'll find online to fix this (like hooks) are kinda a pain in the ass to figure out by yourself. However, running the below command solved this issue completely for me, and will probably work for others as well:
 
 ```bash
 pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[insert filepath here]\site-packages\pyfiglet\fonts;.\pyfiglet\fonts" main.py
