@@ -43,6 +43,11 @@ Most inputs are self-explanatory imo, and those that aren't are specified and de
 
 Thankfully not. For this project makes extensive use of the wonderful [Rich library](https://github.com/Textualize/rich/), thus making it almost as user-friendly as an actual GUI!
 
+> [!Tip]\
+> For optimal results, ensure that the terminal you're using isn't overly customised and doesn't make use of custom fonts, especially if you're not using Windows PowerShell.
+>
+> However, background themes as well as custom text colouring have no impact on the UI. Even the image below shows UNO.py running in a custom-themed PowerShell.
+
 ![UI rich in Rich formatting](/Gameplay%20Images/variety_of_cards_in_hand.png)
 
 <br>
@@ -73,7 +78,7 @@ Yes, I have done this before and feel obliged to let you know that the [Pyfiglet
 pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[insert filepath here]\site-packages\pyfiglet\fonts;.\pyfiglet\fonts" main.py
 ```
 
-> [!Note]\
+> [!Important]\
 > Remember to replace `[insert filepath here]` with the path to the `site-packages` directory for Python on your system.
 >
 > Make sure to run this command with the terminal directing to the `UNO.py` directory.
