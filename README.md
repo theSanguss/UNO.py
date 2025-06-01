@@ -25,7 +25,7 @@ python main.py
 ```
 
 > [!Warning]\
-> This program has not fully been tested for MacOS and Linux, and currently, there are some issues relating to the automatic toggling of fullscreen-mode on these operating systems.
+> This program has not been fully tested on MacOS and Linux, and currently, there are some issues relating to the automatic toggling of fullscreen-mode on these operating systems.
 >
 > Please do file an issue if you encounter anything unexpected or problematic.
 
