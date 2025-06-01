@@ -46,9 +46,13 @@ Thankfully not. For this project makes extensive use of the wonderful [Rich libr
 > [!Tip]\
 > For optimal results, ensure that the terminal you're using isn't overly customised and doesn't make use of custom fonts, especially if you're not using Windows PowerShell.
 >
-> However, background themes as well as custom text colouring have no impact on the UI. Even the image below shows UNO.py running in a custom-themed PowerShell.
+> However, do note that background themes as well as custom text colouring have no impact on the UI. Even the images below show UNO.py running in a custom-themed PowerShell.
 >
-> Also, your terminal font size should ideally be small enough so as to be able to navigate through the UI without ever scrolling. The initial screen is the largest, and if you don't want to reduce your font size, just disable the instructions from being displayed.
+> Also, your terminal's font size should ideally be small enough so as to be able to navigate through the whole UI without ever scrolling. The initial setup screen is the largest in size, and if you don't want to reduce your font size, just disable the instructions from being displayed from within the declaration of `self.setup()` in the file `uno.py`.
+
+![Setup Screen](/Gameplay%20Images/setup_screen.png)
+
+<br>
 
 ![UI rich in Rich formatting](/Gameplay%20Images/variety_of_cards_in_hand.png)
 
