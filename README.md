@@ -25,7 +25,7 @@ python main.py
 ```
 
 > [!Warning]\
-> This program has not yet been tested for MacOS and Linux, and currently, there are some issues relating to the automatic toggling of fullscreen-mode on these operating systems.
+> This program has not fully been tested for MacOS and Linux, and currently, there are some issues relating to the automatic toggling of fullscreen-mode on these operating systems.
 >
 > Please do file an issue if you encounter anything unexpected or problematic.
 
@@ -79,18 +79,18 @@ pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[ins
 ```
 
 > [!Important]\
-> Remember to replace `[insert filepath here]` with the path to the `site-packages` directory for Python on your system.
+> Remember to replace `[insert filepath here]` with the path to the `site-packages` directory for Python on your own system.
 >
-> Make sure to run this command with the terminal directing to the `UNO.py` directory.
+> Make sure to run this command with the terminal directing to the `UNO.py` directory, so that PyInstaller can actually access the needed files.
 
 > [!Caution]\
-> Again, this command has _not_ been tested on MacOS and Linux, and I'm fairly sure `.ico` files are only supported as icons on Windows.
+> This command has _not_ been tested yet on MacOS and Linux, and I'm fairly sure `.ico` files are only supported as file icons on Windows.
 >
 > So, exercise caution when running this command on a non-Windows operating system. Perhaps removing the `--icon` parameter is all that needs to be done.
 
 <br>
 
-### Well, that's about all I have to tell you. Here's some more gameplay screenshots to get you interested...
+### Well, that's about all I have to tell you. Here's a few more gameplay screenshots to get you interested...
 
 ![UNO! declared & turn order reversed](/Gameplay%20Images/declared_uno_and%20reversed_turn_order.png)
 
