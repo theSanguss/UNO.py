@@ -94,17 +94,17 @@ def print_instructions():
 
 
 def display_players_and_top_card(player, players, direction, top_card):
-    # Arrow chars -> 🠇, 🠅
+    # Arrow chars -> ↓, ↑; alt -> 🠇, 🠅
     panel = Align(Panel(
                 Panel(
                     Text(top_card.value, style = "b", justify = "center"),
-                    title = f"[i]{top_card.type}[/i]",
+                    title = f"[{trueColour(top_card.colour)} i]{top_card.type}[/{trueColour(top_card.colour)} i]",
                     style = f"{trueColour(top_card.colour)} on grey7",
                     expand = False,
                     padding = (1, 1)
                 ),
-                title = f"[b]{"🠇 ═══ 🠇" if direction == 1 else "🠅 ═══ 🠅"}[/b]",
-                subtitle = f"[b]{"🠇 ═══ 🠇" if direction == 1 else "🠅 ═══ 🠅"}[/b]",
+                title = f"[b]{"↓ ═══ ↓" if direction == 1 else "↑ ═══ ↑"}[/b]",
+                subtitle = f"[b]{"↓ ═══ ↓" if direction == 1 else "↑ ═══ ↑"}[/b]",
                 border_style = "orange1 b",
                 padding = (0, 1),
                 expand = False,
@@ -139,9 +139,9 @@ def display_hand(player):
     for i, card in enumerate(player.hand):
         panel = Panel(
             Text(card.value, style = "b", justify = "center"),
-            title = f"[i]{card.type}[/i]",
+            title = f"[{trueColour(card.colour)} i]{card.type}[/{trueColour(card.colour)} i]",
             style = f"{trueColour(card.colour)} on grey7",
-            subtitle = f"[dim i]{i + 1}[/dim i]",
+            subtitle = f"[dim {trueColour(card.colour)} i]{i + 1}[/dim {trueColour(card.colour)} i]",
             subtitle_align = "right",
             expand = False,
             padding = (1, 1)

@@ -142,7 +142,7 @@ class Game:
         top_card = self.deck.discard_pile[-1]
 
         # Reverse logic is completed here; at the next turn
-        if not self.act_or_draw_4_already_played and len(self.players) != 2 and top_card.value == "⮂":
+        if not self.act_or_draw_4_already_played and len(self.players) != 2 and top_card.value == "⇄":
             self.direction = -self.direction
             self.act_or_draw_4_already_played = True
 
@@ -191,7 +191,7 @@ class Game:
                 top_card.colour = cli.get_colour_choice()
                 console.print(f"[orange3][dim]//[/dim] {player.name} chose to set the card to {top_card.colour}![/orange3]")
 
-        elif not self.act_or_draw_4_already_played and (top_card.value == "🛇" or (len(self.players) == 2 and top_card.value == "⮂")):
+        elif not self.act_or_draw_4_already_played and (top_card.value == "🛇" or (len(self.players) == 2 and top_card.value == "⇄")):
             console.print(f"[orange3][dim]//[/dim] {player.name} was forced to forfeit their turn![/orange3]")
             
             self.act_or_draw_4_already_played = True
@@ -287,7 +287,7 @@ class Game:
             return False    # Stops the turn loop exactly here
 
         # Logic only completes at start of next turn, so the already_played bool ain't mentioned here
-        if not self.act_or_draw_4_already_played and len(self.players) != 2 and self.deck.discard_pile[-1].value == "⮂":
+        if not self.act_or_draw_4_already_played and len(self.players) != 2 and self.deck.discard_pile[-1].value == "⇄":
             console.print(f"[orange3][dim]//[/dim] Turn order has now been reversed to go {"upwards" if self.direction == 1 else "downwards"}![/orange3]")
             sleep(1)
             print()

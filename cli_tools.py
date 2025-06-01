@@ -1,6 +1,10 @@
+try:
+    from pyautogui import press, hotkey, moveTo, size
+except Exception:
+    pass
+
 from rich.console import Console
 from time import sleep
-from pyautogui import press, hotkey, moveTo, size
 from os import system
 from platform import system as os    # Named 'os' to avoid confusion with 'system'
 import cursor
