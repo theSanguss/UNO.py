@@ -65,11 +65,11 @@ def print_instructions():
     No1 = "When choosing to play a card, enter the number corresponding to the position of the card in your hand. " \
         "This number is given at the bottom-right corner of each card. When choosing to draw, simply enter [b]'draw'[/b].\n"
     
-    No2 = "When playing a card while having two cards, remember to type [b]'uno [dim]<[/dim]card number[dim]>[/dim]'[/b] instead to declare UNO as well, and thus avoid being caught. " \
+    No2 = "When playing a card while having two cards, remember to type [b]'uno [dim][[/dim]card number[dim]][/dim]'[/b] instead to declare UNO as well, and thus avoid being caught. " \
         "When drawing a card while having one card, in case the card can be played, remember to type [b]'uno draw'[/b] instead to ensure UNO is declared in that scenario.\n"
     
     No3 = "If a player forgets to declare UNO when they're supposed to, and doesn't get caught by anyone else, " \
-        "just after you're prompted to proceed to the next turn, type [b]'gotcha [dim]<[/dim]current player's name[dim]>[/dim]'[/b] to catch them.\n"
+        "just after you're prompted to proceed to the next turn, type [b]'gotcha [dim][[/dim]current player's name[dim]][/dim]'[/b] to catch them.\n"
     
     No4 = "[b i]Cheat Code:[/b i] Typing [b]'show all hands'[/b] just after being prompted to continue once setup is completed, " \
         "allows you to see the hand of the current player each turn.\n"
