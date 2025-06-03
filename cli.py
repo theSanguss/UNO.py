@@ -98,7 +98,7 @@ def display_players_and_top_card(player, players, direction, top_card):
     panel = Align(Panel(
                 Panel(
                     Text(top_card.value, style = "b", justify = "center"),
-                    title = f"[{trueColour(top_card.colour)} i]{top_card.type}[/{trueColour(top_card.colour)} i]",
+                    title = f"[{trueColour(top_card.colour)} i on grey7]{top_card.type}[/{trueColour(top_card.colour)} i on grey7]",
                     style = f"{trueColour(top_card.colour)} on grey7",
                     expand = False,
                     padding = (1, 1)
@@ -139,9 +139,9 @@ def display_hand(player):
     for i, card in enumerate(player.hand):
         panel = Panel(
             Text(card.value, style = "b", justify = "center"),
-            title = f"[{trueColour(card.colour)} i]{card.type}[/{trueColour(card.colour)} i]",
+            title = f"[{trueColour(card.colour)} i on grey7]{card.type}[/{trueColour(card.colour)} i on grey7]",
             style = f"{trueColour(card.colour)} on grey7",
-            subtitle = f"[dim {trueColour(card.colour)} i]{i + 1}[/dim {trueColour(card.colour)} i]",
+            subtitle = f"[dim {trueColour(card.colour)} i on grey7]{i + 1}[/dim {trueColour(card.colour)} i on grey7]",
             subtitle_align = "right",
             expand = False,
             padding = (1, 1)

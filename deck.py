@@ -20,7 +20,7 @@ class Deck:
         return full_deck
 
     def shuffle(self, number_of_shuffles = 1):
-        # Veery thorough shuffle
+        # *Very* thorough shuffle
         for _ in range(number_of_shuffles):
             shuffle(self.cards)
             shuffle(self.cards[:len(self.cards)//2])
