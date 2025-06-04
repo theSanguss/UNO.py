@@ -13,6 +13,16 @@
 
 <br>
 
+---
+
+![Setup Screen](/Gameplay%20Images/setup_screen.png)
+
+<br>
+
+![UI rich in Rich formatting](/Gameplay%20Images/variety_of_cards_in_hand.png)
+
+<br>
+
 ## How to run?
 
 Enter the following commands into your terminal:
@@ -39,9 +49,21 @@ Most inputs are self-explanatory imo, and those that aren't are specified and de
 
 <br>
 
-## Is this just another boring CLI game?
+---
 
-Thankfully not. For this project makes extensive use of the wonderful [Rich library](https://github.com/Textualize/rich/), thus making it almost as user-friendly as an actual GUI!
+![UNO! declared & turn order reversed](/Gameplay%20Images/declared_uno_and%20reversed_turn_order.png)
+
+<br>
+
+![Victory Screen](/Gameplay%20Images/lesgo_i_win.png)
+
+<br>
+
+# FAQs :
+
+## 1. How does the UI work?
+
+This project makes extensive use of the wonderful [Rich library](https://github.com/Textualize/rich/) for its UI, so much so that it can serve as a showcase for several of Rich's versatile components and how they can be meshed together! It is still fundamentally text-based though, so maybe take a look at some of the tips below for better UI rendering:
 
 > [!Tip]\
 > For optimal results, ensure that the terminal you're using isn't overly customised and doesn't make use of custom fonts, especially if you're not using Windows PowerShell.
@@ -50,33 +72,27 @@ Thankfully not. For this project makes extensive use of the wonderful [Rich libr
 >
 > Also, your terminal's font size should ideally be small enough so as to be able to navigate through the whole UI without ever scrolling. The initial setup screen is the largest in size, and if you don't want to reduce your font size, just disable the instructions from being displayed from within the declaration of `self.setup()` in the file `uno.py`.
 
-![Setup Screen](/Gameplay%20Images/setup_screen.png)
-
 <br>
 
-![UI rich in Rich formatting](/Gameplay%20Images/variety_of_cards_in_hand.png)
-
-<br>
-
-## Are the rules the same as normal UNO?
+## 2. Are the rules the same as normal UNO?
 
 Yes, except for two things - viewing the cards of the player you challenge (isn't necessary here, cuz this ain't IRL), and the score system (cuz literally no one cares about that).
 
 <br>
 
-## Does this support local multiplayer?
+## 3. Does this support local multiplayer?
 
 No. It wouldn't be all too hard to implement by just adding multiple Player objects, but from a gameplay standpoint, it would be annoying to manange. **Feel free to fork this project and try implementing a good Local Multiplayer system.** Maybe even have it run on a separate terminal for each non-AI player? Idk. Anyway, **contributions are welcome**.
 
 <br>
 
-## How does the AI in this even work?
+## 4. How does the AI in this work?
 
 The AI players in this are biased by a numerical property called their 'intellect'. I say 'biased', as a large part of their logic is based on random chance, and intellect only serves to vary this chance. In some cases, AIs with the lowest intellect are barred from making intelligent decisions.
 
 <br>
 
-## Is it viable to convert this into an executable file using PyInstaller?
+## 5. Is it viable to convert this into an executable file using PyInstaller?
 
 Yes, I have done this before and feel obliged to let you know that the [Pyfiglet library](https://github.com/pwaller/pyfiglet/) does **_not_** like working with [PyInstaller](https://github.com/pyinstaller/pyinstaller/) as is, and most of the things you'll find online to fix this (like hooks) are kinda a pain in the ass to figure out by yourself. However, running the below command solved this issue completely for me, and will probably work for others as well:
 
@@ -95,13 +111,5 @@ pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[ins
 > So, exercise caution when running this command on a non-Windows operating system. Perhaps removing the `--icon` parameter is all that needs to be done.
 
 <br>
-
-### Well, that's about all I have to tell you. Here's a few more gameplay screenshots to get you interested...
-
-![UNO! declared & turn order reversed](/Gameplay%20Images/declared_uno_and%20reversed_turn_order.png)
-
-<br>
-
-![Victory Screen](/Gameplay%20Images/lesgo_i_win.png)
 
 **(￣ o ￣) . z Z**
