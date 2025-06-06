@@ -4,7 +4,7 @@
 
 - 🚀 _My first OOP Python project, as well as my first GitHub repository! (ignoring config repo)_
 - 🎮 _Singleplayer turn-based card game with AI opponents._
-- 📟 _Runs within the terminal, is lightweight in code, and primarily uses a CLI._
+- 📟 _Runs within the terminal, is lightweight in code, and uses a CLI combined with a TUI._
 - 🐍 _Made with Python (version 3.12)._
 
 <br>
@@ -81,7 +81,7 @@ This project makes extensive use of the wonderful [Rich library](https://github.
 
 ## 4. How does the AI in this work?
 
-The AI players in this are biased by a numerical property called their 'intellect'. I say 'biased', as a large part of their logic is based on random chance, and intellect only serves to vary this chance. In some cases, AIs with the lowest intellect are barred from making intelligent decisions.
+The AI players in this are biased by a numerical property called their 'intellect'. I say 'biased', as a large part of their logic is based on random chance, and intellect mostly serves to vary this chance. This intellect comes in use for the AI in nearly all aspects of play. In some cases, AIs with the lowest intellect are barred or dissuaded from making intelligent decisions, while those with the highest intellect can perform certain advanced strategies that lower intellect AIs cannot. Looking at the code in `player.py` should give you a good idea of exactly how the AI players function and what the different tactics they can employ are.
 
 <br>
 
