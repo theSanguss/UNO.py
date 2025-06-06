@@ -10,7 +10,7 @@
 <br>
 
 > [!Note]\
-> Despite the name, UNO.py isn't actually a single file, but I've titled it this since the very beginning of its development, and now it'd feel weird to change the name.
+> Despite the name, UNO.py isn't actually a single file, but I've titled it this since the very beginning of its development, and don't feel the need to change it.
 
 <br>
 
@@ -33,7 +33,7 @@ python main.py
 
 **If you don't have Python, and if you happen to be a Windows user**, just download and run the EXE file `UNO.py.exe` available in this repository, which works as a standalone application.
 
-**If you are not a Windows user, and wish to get an executable file version of UNO.py**, you can use [PyInstaller](https://github.com/pyinstaller/pyinstaller/) to make it yourself. For more info on how to use PyInstaller to make an UNO.py executable, refer to the last question in the FAQ section.
+**If you are not a Windows user, and wish to get an executable file version of UNO.py**, you can use [PyInstaller](https://github.com/pyinstaller/pyinstaller/) to make it yourself. For more info on how to use this tool to make an UNO.py executable, [refer to the last question in the FAQ section](#5-how-can-i-convert-this-into-an-executable-file-myself-using-pyinstaller).
 
 ## How to operate?
 
@@ -73,11 +73,9 @@ No. It wouldn't be all too hard to implement by just adding multiple Player obje
 This project makes extensive use of the wonderful [Rich library](https://github.com/Textualize/rich/) for its UI, so much so that it can serve as a showcase for several of Rich's versatile components and how they can be meshed together! It is still fundamentally text-based though, so maybe take a look at some of the tips below for better UI rendering:
 
 > [!Tip]\
-> For optimal results, ensure that the terminal you're using isn't overly customised and doesn't make use of custom fonts, especially if you're not using Windows PowerShell.
+> For optimal results, ensure that the terminal you're using isn't overly customised and doesn't make use of custom fonts, especially if it's not Windows PowerShell. Background themes as well as custom text colouring have no impact on the UI.
 >
-> However, do note that background themes as well as custom text colouring have no impact on the UI. Even the images below show UNO.py running in a custom-themed PowerShell.
->
-> Also, your terminal's font size should ideally be small enough so as to be able to navigate through the whole UI without ever scrolling. The initial setup screen is the largest in size, and if you don't want to reduce your font size, just disable the instructions from being displayed from within the declaration of `self.setup()` in the file `uno.py`.
+> Windows Powershell's default font size is enough to get the proper UI experience, as it eliminates the need to ever scroll the UI. If you are not using Windows Powershell, or have changed the font size, you may have to reduce the font size. However, you might only have to do this to make the setup UI fit in one screen, so another thing you can do is to replace line 30 of the file `uno.py` with `self.setup(show_instructions = False)`, so that the long instructions list will be hidden.
 
 <br>
 
@@ -87,23 +85,31 @@ The AI players in this are biased by a numerical property called their 'intellec
 
 <br>
 
-## 5. Is it viable to convert this into an executable file using PyInstaller?
+## 5. How can I convert this into an executable file myself using PyInstaller?
 
-Yes, I have done this before and feel obliged to let you know that the [Pyfiglet library](https://github.com/pwaller/pyfiglet/) does **_not_** like working with [PyInstaller](https://github.com/pyinstaller/pyinstaller/) as is, and most of the things you'll find online to fix this (like hooks) are kinda a pain in the ass to figure out by yourself. However, running the below command solved this issue completely for me, and will probably work for others as well:
+If you're not already familiar with [PyInstaller](https://github.com/pyinstaller/pyinstaller/), it's a CLI tool that helps bundle Python scripts, modules and libraries into executable files. If you don't already have PyInstaller, run the following command to install it (make sure you have Python installed so that `pip` is recognised by your system):
+
+```bash
+pip install pyinstaller
+```
+
+Then, after cloning this repository and opening UNO.py's folder in the terminal, run the command below to generate the executable (make sure to replace `[insert filepath here]` with the filepath to Python's `site-packages` folder on your system):
 
 ```bash
 pyinstaller --onefile --name="UNO.py" --icon="UNO_icon_new.ico" --add-data "[insert filepath here]\site-packages\pyfiglet\fonts;.\pyfiglet\fonts" main.py
 ```
 
-> [!Important]\
-> Remember to replace `[insert filepath here]` with the path to the `site-packages` directory for Python on your own system.
->
-> Make sure to run this command with the terminal directing to the `UNO.py` directory, so that PyInstaller can actually access the needed files.
+After this, two new folders will be generated inside `UNO.py` - `build` and `dist`. `build` can be ignored, but it is within `dist` that the executable will be stored. The `--onefile` parameter in the above command creates a standalone executable file, which can be moved to any location in your system.
 
-> [!Caution]\
-> This command has _not_ been tested yet on MacOS and Linux, and I'm fairly sure `.ico` files are only supported as file icons on Windows.
+If you don't want the libraries to be bundled with the executable, and would prefer to run the executable from within the `dist` directory, rather than having it as a portable standalone, you can remove the `--onefile` parameter. This will also improve the executable's startup speed by some amount.
+
+> [!Note]\
+> The `--add-data` parameter is mandatory to include, as [Pyfiglet](https://github.com/pwaller/pyfiglet/), a font library used with this project, requires a filepath to be specified for it to be able to access its font files.
 >
-> So, exercise caution when running this command on a non-Windows operating system. Perhaps removing the `--icon` parameter is all that needs to be done.
+> `.ico` files are not supported as file icons on systems other than Windows, so you'll have to convert `UNO-icon-new.ico` to a different file format (like `.icns` for MacOS and `.png` for Linux) in order to use it in the `--icon` parameter.
+
+> [!Warning]\
+> This command hasn't been tested on other systems, and there is no guarantee that it will work for all users. However, this is the easiest method I know of which also resolves all issues with Pyfiglet, and has worked flawlessly for me, which is why I recommend using it.
 
 <br>
 
