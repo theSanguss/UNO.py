@@ -75,7 +75,7 @@ This project makes extensive use of the wonderful [Rich library](https://github.
 > [!Tip]\
 > For optimal results, ensure that the terminal you're using isn't overly customised and doesn't make use of custom fonts, especially if it's not Windows PowerShell. Background themes as well as custom text colouring have no impact on the UI.
 >
-> Windows Powershell's default font size is enough to get the proper UI experience, as it eliminates the need to ever scroll the UI. If you are not using Windows Powershell, or have changed the font size, you may have to reduce the font size. However, you might only have to do this to make the setup UI fit in one screen, so another thing you can do is to replace line 30 of the file `uno.py` with `self.setup(show_instructions = False)`, so that the long instructions list will be hidden.
+> Windows Powershell's default font size (12pt), or anything lower, is enough to get the proper UI experience, as it eliminates the need to ever scroll the UI on a standard display (16:9). If you are not using Windows Powershell, or have increased the font size, you may have to reduce it. However, you might only have to do this to make the setup UI fit in one screen, so another thing you can do is to replace line 30 of the file `uno.py` with `self.setup(show_instructions = False)`, so that the long instructions list will be hidden.
 
 <br>
 
