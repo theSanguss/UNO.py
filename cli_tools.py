@@ -34,7 +34,7 @@ def clear(clear_lines = 0):
         else:
             system('clear')
 
-def toggleFullscreen():
+def toggleFullscreen(move_cursor_to_centre = False):
     '''
     Attempts to automatically toggle fullscreen and move the mouse cursor out of sight.
 
@@ -43,8 +43,12 @@ def toggleFullscreen():
 
     try:
         screen_width, screen_height = size()
-        moveTo(screen_width - 2, screen_height - 2)    # Moves mouse cursor to bottom-right corner
         
+        if not move_cursor_to_centre:
+            moveTo(screen_width - 3, screen_height - 3)    # Moves mouse cursor to bottom-right corner
+        else:
+            moveTo(screen_width // 2, screen_height // 2)
+
         if "Darwin" in os():
             hotkey("ctrl", "command", "f")
         else:

@@ -28,10 +28,16 @@ class Deck:
 
     def draw(self, count = 1):
         drawn_cards = []
+
         for _ in range(count):
             if not self.cards:
                 self.reshuffle_discard_pile()
             drawn_cards.append(self.cards.pop())
+
+        for card in drawn_cards:
+            if card.type == "WIL":
+                card.colour = "white"    
+
         return drawn_cards
     
     def reshuffle_discard_pile(self):

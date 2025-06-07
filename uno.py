@@ -45,7 +45,7 @@ class Game:
 
         finally:
             cursor.show()
-            toggleFullscreen()
+            toggleFullscreen(move_cursor_to_centre = True)
 
 
     def setup(self, show_instructions):
