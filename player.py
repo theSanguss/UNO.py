@@ -53,7 +53,7 @@ class AIPlayer(Player):
                 
                 # Always say UNO with 2 cards if max intellect, else leave it to chance
                 if len(self.hand) == 2:
-                    self.uno = randint(0, 4) <= self.intellect + 1
+                    self.uno = randint(0, 5) <= self.intellect + 2
                     return i + 1
 
                 # Below two ifs roughly translate to imma screw u over
