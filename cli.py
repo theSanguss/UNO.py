@@ -150,20 +150,22 @@ def display_hand(player):
         card_panels.append(panel)
 
     # Creates the tabular/grid display for the cards in hand
-    # The display will be 15 columns wide, and will wrap to the next line if there are more than 15 cards in hand
-    if len(card_panels) <= 15:    
+    # The display will usually be 15 columns wide, and will wrap to the next line if there are more than 15 cards in hand
+    number_of_columns = (console.width + 2) // 11    # (163 + 2) // 11 = 15 columns
+
+    if len(card_panels) <= number_of_columns:
         for x in card_panels:
             hand_display.add_column()
 
         hand_display.add_row(*card_panels)
     else:
-        for x in card_panels[:15]:
+        for x in card_panels[:number_of_columns]:
             hand_display.add_column()
 
-        hand_display.add_row(*card_panels[:15])
+        hand_display.add_row(*card_panels[:number_of_columns])
         
-        for k in range(15, len(card_panels), 15):
-            hand_display.add_row(*card_panels[k:k+15])
+        for k in range(number_of_columns, len(card_panels), number_of_columns):
+            hand_display.add_row(*card_panels[k:k + number_of_columns])
     
     # Prints out a nice header for the hand display
     print_heading(f"{player.name}'S HAND", "orange3")
