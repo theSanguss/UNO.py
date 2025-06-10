@@ -65,11 +65,11 @@ def print_instructions():
     No1 = "When choosing to play a card, enter the number corresponding to the position of the card in your hand. " \
         "This number is given at the bottom-right corner of each card. When choosing to draw, simply enter [b]'draw'[/b].\n"
     
-    No2 = "When playing a card while having two cards, remember to type [b]'uno [dim][[/dim]card number[dim]][/dim]'[/b] instead to declare UNO as well, and thus avoid being caught. " \
-        "When drawing a card while having one card, in case the card can be played, remember to type [b]'uno draw'[/b] instead to ensure UNO is declared in that scenario.\n"
+    No2 = "When playing a card, while holding two cards, remember to type [b]'uno [dim][[/dim]card number[dim]][/dim]'[/b] instead to declare [i b]UNO[/i b] as well, and thus avoid being caught. " \
+        "When drawing a card, while holding just one card, in case the card drawn can be played, remember to type [b]'uno draw'[/b] instead to ensure that [i b]UNO[/i b] is declared in that scenario.\n"
     
-    No3 = "If a player forgets to declare UNO when they're supposed to, and doesn't get caught by anyone else, " \
-        "just after you're prompted to proceed to the next turn, type [b]'gotcha [dim][[/dim]current player's name[dim]][/dim]'[/b] to catch them.\n"
+    No3 = "If a player forgets to declare [i b]UNO[/i b] when they're supposed to, and doesn't get caught by anyone else, " \
+        "just after you're prompted to proceed to the next turn, type [b]'gotcha [dim][[/dim]current player's name[dim]][/dim]'[/b] to catch that player.\n"
     
     No4 = "[b i]Cheat Code:[/b i] Typing [b]'show all hands'[/b] just after being prompted to continue once setup is completed, " \
         "allows you to see the hand of the current player each turn.\n"
@@ -118,8 +118,8 @@ def display_players_and_top_card(player, players, direction, top_card):
     player_display.add_column(width = console.width // 3)
     player_display.add_column(width = console.width // 3)
 
-    left_player_list = ""
-    right_player_list = ""
+    left_player_list = "\n"
+    right_player_list = "\n"
 
     for a_player in players[:((len(players) + 1) // 2)]:
         left_player_list += f"{a_player}{"[gold1 b]⠀<<[/gold1 b]" if a_player.name == player.name else ""}\n"
