@@ -35,16 +35,21 @@ python main.py
 
 **If you are not a Windows user, and wish to get an executable file version of UNO.py**, you can use [PyInstaller](https://github.com/pyinstaller/pyinstaller/) to make it yourself. For more info on how to use this tool to make an UNO.py executable, [refer to the last question in the FAQ section](#5-how-can-i-convert-this-into-an-executable-file-myself-using-pyinstaller).
 
+> [!Note]\
+> This program has been tested to work on MacOS and Linux, but certain issues like the the automatic toggling of fullscreen-mode still persist. So for the time being, users on systems hostile to [PyAutoGUI](https://github.com/asweigart/pyautogui/) (one example being Linux users using Wayland instead of X11) will have to make do with toggling fullscreen-mode manually.
+>
+> Please do file an issue if you encounter anything unexpected or problematic, especially if you're not a Windows user.
+
+<br>
+
 ## How to operate?
 
 This is a CLI-based application, so entering in inputs as you normally would in a terminal is pretty much all you need to do.
 
 Most inputs are intuitive and self-explanatory, and those that aren't are specified and detailed in-game.
 
-> [!Note]\
-> This program has been tested to work on MacOS and Linux, but certain issues like the the automatic toggling of fullscreen-mode still persist. So for the time being, users on systems hostile to [PyAutoGUI](https://github.com/asweigart/pyautogui/) (one example being Linux users using Wayland instead of X11) will have to make do with toggling fullscreen-mode manually.
->
-> Please do file an issue if you encounter anything unexpected or problematic, especially if you're not a Windows user.
+> [!Warning]\
+> If your system has a custom keybind for toggling fullscreen mode, that isn't _F11_ (or _Control+Command+F_ if you're using MacOS), **make sure to revert it back to the default keybind when running this program**, or at least modify the `toggleFullscreen` function in `cli_tools.py`. **Unexpected things may occur if the _F11_ key/_Control+Command+F_ key combination is modified to serve a different purpose**.
 
 <br>
 
