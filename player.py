@@ -111,8 +111,8 @@ class AIPlayer(Player):
     def think_wild(self, top_card, next_player = None, is_draw_4 = False):
         bad_choice = None
 
-        # Prevents same colour as top card unneccessarily been chosen
-        if next_player != None and (not is_draw_4) and len(next_player.hand) <= self.intellect:
+        # Higher chance for low intellect AIs to fumble when optimal colour is already that of top card
+        if randint(0, self.intellect**2) == 0:
             bad_choice = top_card.colour
 
         # AI player chooses a colour based on the most common colour in their hand
