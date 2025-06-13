@@ -109,12 +109,6 @@ class AIPlayer(Player):
     
 
     def think_wild(self, top_card, next_player = None, is_draw_4 = False):
-        bad_choice = None
-
-        # Higher chance for low intellect AIs to fumble when optimal colour is already that of top card
-        if randint(0, self.intellect**2) == 0:
-            bad_choice = top_card.colour
-
         # AI player chooses a colour based on the most common colour in their hand
         colours = ["red", "green", "blue", "yellow"]
         shuffle(colours)
@@ -144,9 +138,9 @@ class AIPlayer(Player):
         # Chooses colour with the highest count; the first highest in case of a tie
         chosen_colour = max(colour_count, key = colour_count.get)
         
-        if chosen_colour == bad_choice:
-            while chosen_colour == bad_choice:
-                chosen_colour = colours[randint(0, 3)]
+        if chosen_colour == top_card.colour and (not randint(0, 2) > self.intellect):
+            colour_count.pop(chosen_colour)
+            chosen_colour = max(colour_count, key = colour_count.get)
 
         return chosen_colour
 
