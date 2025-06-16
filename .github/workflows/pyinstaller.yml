@@ -25,7 +25,7 @@ jobs:
 
       - name: Package UNO.py with PyInstaller
         run: |
-          pyinstaller UNO.py.spec
+          pyinstaller UNO.py-github-release.spec
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
