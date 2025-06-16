@@ -1,0 +1,53 @@
+# .github/workflows/build-exe.yml
+
+# Name of the workflow as it will appear in the GitHub Actions tab
+name: Build UNO Executable with PyInstaller
+
+# Define when this workflow should run
+on:
+  push:
+    # Trigger the workflow on pushes to the 'main' branch (or your default branch)
+    branches:
+      - main
+  # Optional: You can also add 'workflow_dispatch' to manually trigger the workflow
+  workflow_dispatch:
+
+# Define the jobs that will run as part of this workflow
+jobs:
+  build:
+    # Specify the runner environment. 'ubuntu-latest' is common for Python builds.
+    # If your executable is specifically for Windows, you can change this to 'windows-latest'.
+    runs-on: ubuntu-latest
+
+    # Define the steps for this job
+    steps:
+      # Step 1: Checkout your repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Run the PyInstaller Action
+      # This action takes care of setting up Python, installing PyInstaller,
+      # installing your project's dependencies, and running PyInstaller.
+      - name: PyInstaller Action
+        uses: Martin005/pyinstaller-action@v1.2.0
+        with:
+          # Path to your main Python script
+          spec: "main.py"
+          # Path to your requirements.txt file (assuming it's in the root)
+          # This will install `pyfiglet` which is likely needed for your script.
+          requirements: "requirements.txt"
+          # Options for the pyinstaller command, separated by comma and space.
+          # - `--onefile`: Creates a single executable file.
+          # - `--name="UNO"`: Sets the name of the generated executable to "UNO" (without the .py extension).
+          # - `--icon="UNO_icon_new.ico"`: Uses your custom icon. Ensure `UNO_icon_new.ico` is in your repository's root.
+          # - `--add-data "pyfiglet/fonts:pyfiglet/fonts"`: This command is used to include
+          #   the fonts directory from the `pyfiglet` package into your executable.
+          #   The format `SOURCE:DEST` is used for Unix-like systems (like Ubuntu runners).
+          #   `SOURCE` is the path to the data to be added, and `DEST` is the
+          #   sub-directory inside the bundled application where the data will be placed.
+          #   This assumes `pyinstaller` can locate the `pyfiglet/fonts`
+          #   directory from the installed package.
+          options: '--onefile, --name="UNO", --icon="UNO_icon_new.ico", --add-data "pyfiglet/fonts:pyfiglet/fonts"'
+          # If provided, this uploads the generated executable as a zip artifact
+          # in your GitHub Actions run summary.
+          upload_exe_with_name: "UNO-Executable"

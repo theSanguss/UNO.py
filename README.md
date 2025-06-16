@@ -22,18 +22,21 @@
 
 ## How to run?
 
-**If you have Python installed** (MacOS and Linux usually have Python pre-installed), enter the following commands into your terminal:
+Enter the following command in your terminal, in order to **clone the repository and run UNO.py**:
 
 ```bash
-git clone https://github.com/theSanguss/UNO.py.git
-cd UNO.py
-pip install -r requirements.txt
+curl -fsSL "https://raw.githubusercontent.com/theSanguss/UNO.py/main/install.sh" | bash
+```
+
+**To rerun UNO.py**, just open the folder of the repository in the terminal and enter the following command:
+
+```bash
 python main.py
 ```
 
-**If you don't have Python, and if you happen to be a Windows user**, just download and run the EXE file `UNO.py.exe` available in this repository, which works as a standalone application.
+**If you want a portable and easy-to-run version of the game**, just download and run the Windows EXE file `UNO.py.exe` available in this repository, which works as a standalone application.
 
-**If you are not a Windows user, and wish to get an executable file version of UNO.py**, you can use [PyInstaller](https://github.com/pyinstaller/pyinstaller/) to make it yourself. For more info on how to use this tool to make an UNO.py executable, [refer to the last question in the FAQ section](#5-how-can-i-convert-this-into-an-executable-file-myself-using-pyinstaller).
+**If you are not a Windows user, but still wish to get an executable file version of UNO.py**, you can use [PyInstaller](https://github.com/pyinstaller/pyinstaller/) to make it yourself. For more info on how to use this tool to make an UNO.py executable, [refer to the last question in the FAQ section](#5-how-can-i-convert-this-into-an-executable-file-myself-using-pyinstaller).
 
 > [!Note]\
 > This program has been tested to work on MacOS and Linux, but certain issues like the the automatic toggling of fullscreen-mode still persist. So for the time being, users on systems hostile to [PyAutoGUI](https://github.com/asweigart/pyautogui/) (one example being Linux users using Wayland instead of X11) will have to make do with toggling fullscreen-mode manually.

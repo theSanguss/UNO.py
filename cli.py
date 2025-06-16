@@ -216,9 +216,9 @@ def get_card_choice(player, top_card):
         
         if user_input[:4] == "uno " and len(player.hand) == 2:
             uno_time = True
-            user_input = user_input[4:]
-        
-        choice = assignInputToVar(user_input, valid_choices = tuple(map(str, range(1, len(player.hand) + 1))))
+            choice = assignInputToVar(user_input, valid_choices = tuple("uno " + str(i) for i in range(1, len(player.hand) + 1)))[4:]
+        else:
+            choice = assignInputToVar(user_input, valid_choices = tuple(map(str, range(1, len(player.hand) + 1))))
 
         card_choice = player.hand[int(choice) - 1]
 

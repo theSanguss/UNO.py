@@ -1,5 +1,5 @@
 try:
-    from pyautogui import press, hotkey, moveTo, size
+    import pyautogui
 except Exception:
     pass
 
@@ -42,17 +42,19 @@ def toggleFullscreen(move_cursor_to_centre = False):
     '''
 
     try:
-        screen_width, screen_height = size()
+        pyautogui.FAILSAFE = False
+        pyautogui.PAUSE = 0.025
+        screen_width, screen_height = pyautogui.size()
         
         if not move_cursor_to_centre:
-            moveTo(screen_width - 3, screen_height - 3)    # Moves mouse cursor to bottom-right corner
+            pyautogui.moveTo(screen_width, screen_height // 2)    # Moves mouse cursor to bottom-right corner
         else:
-            moveTo(screen_width // 2, screen_height // 2)
+            pyautogui.moveTo(screen_width // 2, screen_height // 2)
 
         if "Darwin" in os():
-            hotkey("ctrl", "command", "f")
+            pyautogui.hotkey("ctrl", "command", "f")
         else:
-            press("f11")
+            pyautogui.press("f11")
             
     except Exception:
         cursor.hide()
@@ -125,12 +127,12 @@ def assignInputToVar(user_input, valid_choices = (), invalid_choices = ()):    #
     # Note: If a choice arg is a dict, only the keys will be accessed. For accesing values, format as tuple(dict.values()) 
     if (valid_choices != ()) and user_input not in valid_choices:
         if len(str(user_input)) > console.width // 1.5:
-            raise InputError(f"{str(user_input)[:int(console.width // 1.5)]}... is invalid to enter!")
+            raise InputError(f"\" {str(user_input)[:int(console.width // 1.5)]} ... \" is invalid to enter!")
         else:
-            raise InputError(f"{user_input} is invalid to enter!")
+            raise InputError(f"\" {user_input} \" is invalid to enter!")
     
     for i in invalid_choices:    # Choice args can be set to any kind of iterable
         if user_input == i:
-            raise InputError(f"{i} is invalid to enter!")
+            raise InputError(f"\" {i} \" is invalid to enter!")
     
     return user_input
