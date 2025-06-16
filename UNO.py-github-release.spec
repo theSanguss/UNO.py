@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('pyfiglet/fonts', 'pyfiglet/fonts')],
+    datas=[('C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64\\Lib\\site-packages\\pyfiglet\\fonts', '.\\pyfiglet\\fonts')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
