@@ -1,4 +1,0 @@
-pyscreeze
-pymsgbox
-pygetwindow
-pytweening
