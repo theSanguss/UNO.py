@@ -1,4 +1,4 @@
-rich
+rich==13.7.1
 pyfiglet
 pyautogui
 cursor

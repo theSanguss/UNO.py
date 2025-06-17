@@ -22,6 +22,7 @@ jobs:
           pip install pyinstaller
 
           pip install -r requirements.txt
+          pip uninstall -r removable_deps.txt
 
       - name: Package UNO.py with PyInstaller
         run: |
