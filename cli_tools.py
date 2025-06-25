@@ -80,15 +80,18 @@ def inputHandler(
             # Clears all lines used for inputting and error msg, moves cursor back to start new input line at same place
             print("\033[A\033[K" * (3 + (len(str(user_input)) - first_input_line) // console.width) , end = "\r")
     
+    char_limit_is_line = False
+    
     if char_limit == "line":
         char_limit = console.width - len(prompt) - 4    # Actual console width from insertion point - 1 char
+        char_limit_is_line = True
 
     while True:
         try:
             user_input = console.input(f"[{style}][dim]>>[/dim] {prompt}[/{style}]")
 
             if len(user_input) > char_limit:
-                if char_limit == (console.width - len(prompt) - 4):
+                if char_limit_is_line:
                     raise InputError("Input cannot exceed or equal the length of the line!")
                 else:
                     raise InputError(f"Input cannot exceed {char_limit} characters!")
