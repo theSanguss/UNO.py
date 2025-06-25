@@ -234,7 +234,6 @@ def get_card_choice(player, top_card):
         "Choose a card to play, or draw a card: ",
         validateCardChoice,
         input_type = str,
-        char_limit = 8,
         player = player,
         top_card = top_card
     )
@@ -247,7 +246,6 @@ def get_colour_choice():
         "Choose a colour to set the card to: ",
         assignInputToVar,
         input_type = str,
-        char_limit = 6,
         valid_choices = ("red", "yellow", "blue", "green")
     )
 
@@ -259,7 +257,6 @@ def get_draw_4_choice(prev_player_name):
         f"Choose to either challenge {prev_player_name}, or draw 4 cards: ",
         assignInputToVar,
         input_type = str,
-        char_limit = 9,
         valid_choices = ("challenge", "draw")
     )
 

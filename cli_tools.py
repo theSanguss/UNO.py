@@ -65,7 +65,7 @@ def toggleFullscreen(move_cursor_to_centre = False):
 def inputHandler(
         prompt, func, *,
         style = "orange1", error_style = "orange_red1", input_type = int, allow_negatives = False,
-        input_arg_name = "user_input", char_limit = "line", **kwargs):
+        input_arg_name = "user_input", char_limit = "line", min_line_limit = 9, **kwargs):
     
     '''The **greatest** input-error-handling function to exist (probably).'''
 
@@ -84,7 +84,11 @@ def inputHandler(
     
     if char_limit == "line":
         char_limit = console.width - len(prompt) - 4    # Actual console width from insertion point - 1 char
-        char_limit_is_line = True
+        
+        if char_limit < min_line_limit:    # Sets the char limit to a fixed min val if line is too short
+            char_limit = min_line_limit
+        else:    # 'else' is used here since the line error msg(Ln 99) is no longer accurate if above condition is true
+            char_limit_is_line = True
 
     while True:
         try:
