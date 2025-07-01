@@ -49,9 +49,9 @@ class Game:
 
 
     def setup(self, show_instructions):
-        cli.print_heading("", "orange3", "_", dimmen = False)
+        console.print("_" * console.width, style = "orange3")
         cli.print_heading("UNO.PY", "orange1 on grey7", "█", dimmen = False)
-        cli.print_heading("", "orange3", "‾", dimmen = False)
+        console.print("‾" * console.width, style = "orange3")
         print()
         print()
         print()
@@ -152,9 +152,9 @@ class Game:
         next_player_index = (self.player_index + self.direction) % len(self.players)
         player = self.players[self.player_index]
 
-        cli.print_heading("", "orange3", "_", dimmen = False)
+        console.print("_" * console.width, style = "orange3")
         cli.print_heading("UNO.PY", "orange1 on grey7", "█", dimmen = False)
-        cli.print_heading("", "orange3", "‾", dimmen = False)
+        console.print("‾" * console.width, style = "orange3")
         print()
         print()
 
@@ -314,9 +314,9 @@ class Game:
 
 
     def victory_screen(self):
-        cli.print_heading("", "orange3", "_", dimmen = False)
+        console.print("_" * console.width, style = "orange3")
         cli.print_heading("UNO.PY", "orange1 on grey7", "█", dimmen = False)
-        cli.print_heading("", "orange3", "‾", dimmen = False)
+        console.print("‾" * console.width, style = "orange3")
         print()
         print()
         print()

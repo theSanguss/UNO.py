@@ -7,14 +7,15 @@ class Player:
         self.uno = False
 
     def __str__(self):
-        return f"{self.name}{' ' * (11 - len(self.name))}:{' 🂠' * len(self.hand)}" + \
+        # {string:c<N} means string is expressed as N-char str with required tailing 'c' chars
+        return f"{self.name: <11}:{' 🂠' * len(self.hand)}" + \
         f"{'[gold1 b i] UNO[/gold1 b i]' if self.uno == True else ''}"
 
 
 class AIPlayer(Player):
     def __init__(self, name):
         super().__init__(name)   # Exact same properties as Player()
-        self.intellect = randint(1, 3)    # 1 = stoopid, 2 = alright, 3 = smort
+        self.intellect = randint(1, 3)    # 1 = reckless, 2 = competent, 3 = strategic
 
     def think(self, top_card, next_player):
         # Below vars contains the number of playable cards in hand
