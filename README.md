@@ -125,6 +125,8 @@ If you don't want the libraries to be bundled with the executable, and would pre
 
 ![Modified Code in UNO_WOE.py.exe](/README%20Images/modified_code_for_WOE.png)
 
+As you can see, this code is incredibly simple as compared to what is used in the standard version of UNO.py, so it's rather unfortunate that these libs aren't well-compatible with non-Windows systems.
+
 <br>
 
 **(￣ o ￣) . z Z**
