@@ -14,9 +14,9 @@
 
 <br>
 
-![Setup Screen](/Gameplay%20Images/setup_screen.png)
+![Setup Screen](/README%20Images/setup_screen.png)
 
-![UI rich in Rich formatting](/Gameplay%20Images/variety_of_cards_in_hand.png)
+![UI rich in Rich formatting](/README%20Images/variety_of_cards_in_hand.png)
 
 <br>
 
@@ -34,7 +34,7 @@ curl -fsSL "https://raw.githubusercontent.com/theSanguss/UNO.py/main/install.sh"
 python main.py
 ```
 
-**If you want a portable and easy-to-run version of the game**, just download and run the Windows EXE file `UNO.py.exe` available in this repository, which works as a standalone application.
+**If you want a portable and easy-to-run version of the game**, just download and run one of the two Windows EXE files available in this repository – `UNO.py.exe` or `UNO-WOE.py.exe`. While the former has been created using the same code you see in this repository, the latter uses a slightly different version of `cli_tools.py`, making use of the [keyboard](https://github.com/boppreh/keyboard/) and [mouse](https://github.com/boppreh/mouse/) libraries as a replacement to [PyAutoGUI](https://github.com/asweigart/pyautogui/), as these two libraries are significantly more lightweight, reducing the time it takes to load UNO.py. [Click here](#6-what-code-was-modified-in-uno_woepyexe-aside-from-the-new-imports) to see the code that was modified.
 
 **If you are not a Windows user, but still wish to get an executable file version of UNO.py**, you can use [PyInstaller](https://github.com/pyinstaller/pyinstaller/) to make it yourself. For more info on how to use this tool to make an UNO.py executable, [refer to the last question in the FAQ section](#5-how-can-i-convert-this-into-an-executable-file-myself-using-pyinstaller).
 
@@ -56,9 +56,9 @@ Most inputs are intuitive and self-explanatory, and those that aren't are specif
 
 <br>
 
-![UNO! declared & turn order reversed](/Gameplay%20Images/declared_uno_and%20reversed_turn_order.png)
+![UNO! declared & turn order reversed](/README%20Images/declared_uno_and%20reversed_turn_order.png)
 
-![Victory Screen](/Gameplay%20Images/lesgo_i_win.png)
+![Victory Screen](/README%20Images/lesgo_i_win.png)
 
 <br>
 
@@ -118,6 +118,12 @@ If you don't want the libraries to be bundled with the executable, and would pre
 
 > [!Warning]\
 > This command hasn't been tested on other systems, and there is no guarantee that it will work for all users. However, this is the easiest method I know of which also resolves all issues with Pyfiglet, and has worked flawlessly for me, which is why I recommend using it.
+
+<br>
+
+## 6. What code was modified in UNO_WOE.py.exe, aside from the new imports?
+
+![Modified Code in UNO_WOE.py.exe](/README%20Images/modified_code_for_WOE.png)
 
 <br>
 
