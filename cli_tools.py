@@ -63,11 +63,11 @@ def toggleFullscreen(move_cursor_to_centre = False):
 
 # Reusable error handling function for both input and function call, function parameters are passed through **kwargs
 def inputHandler(
-        prompt, func, *,
+        prompt: str, func, *,
         style = "orange1", error_style = "orange_red1", input_type = int, allow_negatives = False,
-        input_arg_name = "user_input", char_limit = "line", min_line_limit = 9, **kwargs):
+        input_arg_name = "user_input", char_limit: int | str = "line", min_line_limit = 9, **kwargs):
     
-    '''The **greatest** input-error-handling function to exist (probably).'''
+    '''Very useful and versatile input-handling/input-sanitising function, which I plan on reusing for future projects.'''
 
     cursor.show()
     prompt = prompt[:console.width - 3]
@@ -100,7 +100,7 @@ def inputHandler(
                 else:
                     raise InputError(f"Input cannot exceed {char_limit} characters!")
                 
-            user_input = input_type(user_input)
+            user_input = input_type(user_input)    # 'input_type' param is a func like int, str, float, etc.
 
             if (input_type == int or input_type == float) and not allow_negatives and user_input < 0:    # Substantiates allow_negatives
                 raise ValueError

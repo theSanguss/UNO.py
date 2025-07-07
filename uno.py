@@ -35,7 +35,7 @@ class Game:
             self.victory_screen()
             clear()
 
-        except KeyboardInterrupt:    # Triggered by using Ctrl+C (it won't copy shit during runtime)
+        except (KeyboardInterrupt, EOFError):    # Triggered by using Ctrl+C (it won't copy shit during runtime) or manual EOFError trigger
             # Note: Using Ctrl+Shift+C works for copying instead
             clear()
             cursor.hide()
