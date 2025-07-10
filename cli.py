@@ -54,7 +54,7 @@ def spinner(message, loading_time, func, *args):
         return func(*args)
 
 def print_heading(heading, style, char = "/", *, dimmen = True):
-    console.print(Rule(title = heading, style = f"{"dim" if dimmen == True else ""} {style}", characters = char), style = f"{style} b")
+    console.print(Rule(title = heading, style = f"{"dim" if dimmen else ""} {style}", characters = char), style = f"{style} b")
 
 
 def print_instructions():

@@ -163,7 +163,7 @@ class Game:
         print()
         print()
 
-        # Shows hand of current player each turn is show_all_hands is True
+        # Shows hand of current player each turn if show_all_hands is True
         cli.display_hand(player) if self.show_all_hands else cli.display_hand(self.players[self.your_index])
         print()
         print()

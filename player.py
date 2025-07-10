@@ -7,9 +7,8 @@ class Player:
         self.uno = False
 
     def __str__(self):
-        # {string:c<N} means string is expressed as N-char str with required tailing 'c' chars
-        return f"{self.name: <11}:{' 🂠' * len(self.hand)}" + \
-        f"{'[gold1 b i] UNO[/gold1 b i]' if self.uno == True else ''}"
+        # {string:N} means string will take up 'N' characters, with tailing spaces added for this purpose
+        return f"{self.name:11}:{' 🂠' * len(self.hand)}{'[gold1 b i] UNO[/gold1 b i]' if self.uno else ''}"
 
 
 class AIPlayer(Player):
@@ -120,7 +119,7 @@ class AIPlayer(Player):
                 colour_count[card.colour] += 1
         
         # Make sure to always pass next_player into the function
-        if next_player != None and (not is_draw_4) and randint(0, 7 - (self.intellect * 2)) == 0:
+        if (next_player is not None) and (not is_draw_4) and randint(0, 7 - (self.intellect * 2)) == 0:
             next_colour_count = {colour: 0 for colour in colours}
             
             for card in next_player.hand:

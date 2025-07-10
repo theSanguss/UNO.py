@@ -15,7 +15,7 @@
 
 # Check for git
 if ! command -v git &> /dev/null; then
-    echo -e "Error: git is not installed. Please install git and try again.\nhttps://git-scm.com/downloads"
+    echo -e "\e[1;31mError: git is not installed. Please install git and try again.\e[0;34m\nhttps://git-scm.com/downloads/\e[0m"
     exit 1
 fi
 
@@ -25,7 +25,7 @@ if command -v python &> /dev/null; then
 elif command -v python3 &> /dev/null; then
     PYTHON_CMD="python3"
 else
-    echo -e "Error: Python is not installed. Please install Python and try again.\nhttps://www.python.org/downloads/"
+    echo -e "\e[1;31mError: Python is not installed. Please install Python and try again.\e[0;34m\nhttps://www.python.org/downloads/\e[0m"
     exit 1
 fi
 
@@ -35,7 +35,7 @@ if command -v pip &> /dev/null; then
 elif $PYTHON_CMD -m pip --version &> /dev/null; then
     PIP_CMD="$PYTHON_CMD -m pip"
 else
-    echo -e "Error: pip is not installed. Please install pip and try again.\nhttps://pip.pypa.io/en/stable/installation/"
+    echo -e "\e[1;31mError: pip is not installed. Please install pip and try again.\e[0;34m\nhttps://pip.pypa.io/en/stable/installation/\e[0m"
     exit 1
 fi
 
