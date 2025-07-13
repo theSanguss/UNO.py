@@ -20,11 +20,9 @@ class Deck:
         return full_deck
 
     def shuffle(self, number_of_shuffles = 1):
-        # *Very* thorough shuffle
+        # Shuffles deck a given number of times, defaults to once
         for _ in range(number_of_shuffles):
             shuffle(self.cards)
-            shuffle(self.cards[:len(self.cards)//2])
-            shuffle(self.cards[len(self.cards)//2:])
 
     def draw(self, count = 1):
         drawn_cards = []
