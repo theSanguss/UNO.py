@@ -127,7 +127,7 @@ def display_players_and_top_card(player, players, direction, top_card):
     for a_player in players[((len(players) + 1) // 2):]:
         right_player_list += f"{a_player}{"[gold1 b]⠀<<[/gold1 b]" if a_player.name == player.name else ""}\n"
 
-    player_display.add_row("⠀", left_player_list, panel, right_player_list)
+    player_display.add_row("", left_player_list, panel, right_player_list)
 
     console.print(player_display, style = "orange3 b")
 
@@ -154,12 +154,12 @@ def display_hand(player):
     number_of_columns = (console.width + 2) // 11    # (163 + 2) // 11 = 15 columns
 
     if len(card_panels) <= number_of_columns:
-        for x in card_panels:
+        for _ in card_panels:
             hand_display.add_column()
 
         hand_display.add_row(*card_panels)
     else:
-        for x in card_panels[:number_of_columns]:
+        for _ in card_panels[:number_of_columns]:
             hand_display.add_column()
 
         hand_display.add_row(*card_panels[:number_of_columns])

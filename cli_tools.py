@@ -38,7 +38,7 @@ def toggleFullscreen(move_cursor_to_centre = False):
     '''
     Attempts to automatically toggle fullscreen and move the mouse cursor out of sight.
 
-    If, for **any** reason, it fails to perform this, it prompts the user to do it themselves.
+    If, for some unknown reason, it fails to perform this, it prompts the user to do it themselves.
     '''
 
     try:
@@ -132,7 +132,7 @@ def assignInputToVar(user_input, valid_choices = (), invalid_choices = ()):    #
     '''
     
     # Note: If a choice arg is a dict, only the keys will be accessed. For accesing values, format as tuple(dict.values()) 
-    if (valid_choices != ()) and user_input not in valid_choices:
+    if len(valid_choices) != 0 and (user_input not in valid_choices):
         if len(str(user_input)) > console.width // 1.5:
             raise InputError(f"\" {str(user_input)[:int(console.width // 1.5)]} ... \" is invalid to enter!")
         else:
