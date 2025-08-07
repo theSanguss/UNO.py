@@ -19,8 +19,8 @@ class Card:
             val_expressions = {
                 "̲6": "6",
                 "̲9": "9",
-                "🛇": "skip",
-                "⮂": "reverse",
+                "⊘": "skip",
+                "⇄": "reverse",
             }
 
             return val_expressions.get(val, val)
