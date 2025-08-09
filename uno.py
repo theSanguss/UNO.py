@@ -33,19 +33,18 @@ class Game:
                 clear()   # Unintuitive ik, but does eliminate a bit of redundancy
             clear()
             self.victory_screen()
-            clear()
 
         except (KeyboardInterrupt, EOFError):    # Triggered by using Ctrl+C (it won't copy shit during runtime) or manual EOFError trigger
             # Note: Using Ctrl+Shift+C works for copying instead
             clear()
             cursor.hide()
             console.print("[orange1][dim]///[/dim] [b]EXITING UNO.PY ... [/b][/orange1]")
-            sleep(1)
-            print()
+            sleep(1.5)
 
         finally:
-            cursor.show()
+            clear()
             toggleFullscreen(move_cursor_to_centre = True)
+            cursor.show()
 
 
     def setup(self, show_instructions):
@@ -74,7 +73,7 @@ class Game:
         print()
         print()
 
-        cli.progress_bar("[dim]///[/dim] [b]BOOTING ... [/b]", 108, 0.05)    # THIS is what causes cursor to reapper after hding
+        cli.progress_bar("[dim]///[/dim] [b]BOOTING ... [/b]", 108, 0.05)    # THIS is what causes cursor to reapper after hiding
         cursor.hide()
         print()
 
@@ -177,8 +176,6 @@ class Game:
             cli.progress_bar("[dim]///[/dim] [b]REBOOTING ... [/b]", 108, 0.03)    # THIS is what causes cursor to reapper after hiding
             cursor.hide()
             print()
-        else:
-            cursor.hide()
 
         console.print(f"[orange1][dim]///[/dim] [b]{player.name}'S TURN IS STARTING ... [/b]")
         sleep(1)
