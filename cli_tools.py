@@ -59,7 +59,7 @@ def toggleFullscreen(move_cursor_to_centre = False):
     except Exception:
         cursor.hide()
         console.input("[orange1][dim]>>>[/dim] [b]PRESS [i]F11/CTRL+CMD+F[/i] TO TOGGLE FULLSCREEN MODE, AND THEN PRESS [i]ENTER[/i] TO CONTINUE ... [/b][/orange1]")
-        print()
+        clear()
 
 # Reusable error handling function for both input and function call, function parameters are passed through **kwargs
 def inputHandler(
