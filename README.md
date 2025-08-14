@@ -28,7 +28,14 @@ Enter the following command in your terminal, in order to **clone the repository
 curl -fsSL "https://raw.githubusercontent.com/theSanguss/UNO.py/main/install.sh" | bash
 ```
 
-**To rerun UNO.py**, just open the folder of the repository in the terminal and enter the following command:
+**In case UNO.py didn't run successfully when initiated by the command above** (still unsure as to why this happens), just execute the two commands below:
+
+```bash
+cd UNO.py
+python main.py
+```
+
+**To rerun UNO.py**, ensure the working directory of your terminal (the folder your terminal is currently accessing) is the UNO.py repository folder, and enter the following command:
 
 ```bash
 python main.py
