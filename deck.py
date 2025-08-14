@@ -9,7 +9,7 @@ class Deck:
 
     def build_deck(self):
         COLOURS = ("red", "green", "yellow", "blue")
-        NUM_CARD_VALUES = ("1", "2", "3", "4", "5", "̲6", "7", "8", "̲9") * 2 + ("0",)    # Operands are used to account for duplicates
+        NUM_CARD_VALUES = ("1", "2", "3", "4", "5", "6̲", "7", "8", "9̲") * 2 + ("0",)    # Operands are used to account for duplicates
         ACT_CARD_VALUES = ("⊘", "⇄", "+ 2") * 2
         WIL_CARD_VALUES = ("⨁", "+ 4") * 4
 
