@@ -17,8 +17,8 @@ class Card:
         def express_value(val):
             # Keys are reprs, vals are the actual values (alt reverse char -> ⇄)
             val_expressions = {
-                "̲6": "6",
-                "̲9": "9",
+                "6̲": "6",
+                "9̲": "9",
                 "⊘": "skip",
                 "⇄": "reverse",
             }
