@@ -70,7 +70,7 @@ def inputHandler(
     '''Very useful and versatile input-handling/input-sanitising function, which I plan on reusing for future projects.'''
 
     cursor.show()
-    prompt = prompt[:console.width - 3]
+    prompt = prompt.expandtabs()[:console.width - 3]
 
     def clearErrorMsg():
         first_input_line = console.width - (len(prompt) + 3)
@@ -92,7 +92,7 @@ def inputHandler(
 
     while True:
         try:
-            user_input = console.input(f"[{style}][dim]>>[/dim] {prompt}[/{style}]")
+            user_input = console.input(f"[{style}][dim]>>[/dim] {prompt}[/{style}]").expandtabs()
 
             if len(user_input) > char_limit:
                 if char_limit_is_line:
@@ -134,7 +134,7 @@ def assignInputToVar(user_input, valid_choices = (), invalid_choices = ()):    #
     # Note: If a choice arg is a dict, only the keys will be accessed. For accesing values, format as tuple(dict.values()) 
     if len(valid_choices) != 0 and (user_input not in valid_choices):
         if len(str(user_input)) > console.width // 1.5:
-            raise InputError(f"\" {str(user_input)[:int(console.width // 1.5)]} ... \" is invalid to enter!")
+            raise InputError(f"\" {str(user_input).expandtabs()[:int(console.width // 1.5)]} ... \" is invalid to enter!")
         else:
             raise InputError(f"\" {user_input} \" is invalid to enter!")
     
