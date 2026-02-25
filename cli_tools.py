@@ -70,20 +70,20 @@ def inputHandler(
     '''Very useful and versatile input-handling/input-sanitising function, which I plan on reusing for future projects.'''
 
     cursor.show()
-    prompt = prompt.expandtabs()[:console.width - 3]
+    prompt = (">> " + prompt).expandtabs()[:console.width - 1]    # Though adding ">> " is redundant, it helps expandtabs align to tab stops accurately 
 
     def clearErrorMsg():
-        first_input_line = console.width - (len(prompt) + 3)
-        if first_input_line <= len(str(user_input)) < console.width:    # Accounts for disrepancy in width of 1st line
+        first_input_line = console.width - len(prompt)
+        if first_input_line <= input_len < console.width:    # Accounts for disrepancy in width of 1st line
             print("\033[A\033[K" * 3, end = "\r")
         else:
             # Clears all lines used for inputting and error msg, moves cursor back to start new input line at same place
-            print("\033[A\033[K" * (3 + (len(str(user_input)) - first_input_line) // console.width) , end = "\r")
+            print("\033[A\033[K" * (3 + (input_len - first_input_line) // console.width) , end = "\r")
     
     char_limit_is_line = False
     
     if char_limit == "line":
-        char_limit = console.width - len(prompt) - 4    # Actual console width from insertion point - 1 char
+        char_limit = console.width - len(prompt) - 1
         
         if char_limit < min_line_limit:    # Sets the char limit to a fixed min val if line is too short
             char_limit = min_line_limit
@@ -92,13 +92,14 @@ def inputHandler(
 
     while True:
         try:
-            user_input = console.input(f"[{style}][dim]>>[/dim] {prompt}[/{style}]").expandtabs()
+            user_input = console.input(f"[{style}][dim]>>[/dim] {prompt[3:]}[/{style}]")    # ">> " in prompt str ignored
+            input_len = len((prompt + user_input).expandtabs()) - len(prompt)
 
-            if len(user_input) > char_limit:
+            if input_len > char_limit:
                 if char_limit_is_line:
                     raise InputError("Input cannot exceed or equal the length of the line!")
                 else:
-                    raise InputError(f"Input cannot exceed {char_limit} characters!")
+                    raise InputError(f"Input cannot exceed {char_limit} character{"s" if char_limit != 1 else ""}!")
                 
             user_input = input_type(user_input)    # 'input_type' param is a func like int, str, float, etc.
 
@@ -133,8 +134,8 @@ def assignInputToVar(user_input, valid_choices = (), invalid_choices = ()):    #
     
     # Note: If a choice arg is a dict, only the keys will be accessed. For accesing values, format as tuple(dict.values()) 
     if len(valid_choices) != 0 and (user_input not in valid_choices):
-        if len(str(user_input)) > console.width // 1.5:
-            raise InputError(f"\" {str(user_input)[:int(console.width // 1.5)]} ... \" is invalid to enter!")
+        if len(str(user_input).expandtabs()) > console.width // 1.5:
+            raise InputError(f"\" {str(user_input).expandtabs()[:int(console.width // 1.5)]} ... \" is invalid to enter!")
         else:
             raise InputError(f"\" {user_input} \" is invalid to enter!")
     
