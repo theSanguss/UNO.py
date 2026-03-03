@@ -73,7 +73,7 @@ class Game:
         print()
         print()
 
-        cli.progress_bar("[dim]///[/dim] [b]BOOTING ... [/b]", 108, 0.05)    # THIS is what causes cursor to reapper after hiding
+        cli.progress_bar("[dim]///[/dim] [b]BOOTING ... [/b]", 108, 0.04)    # THIS is what causes cursor to reapper after hiding
         cursor.hide()
         print()
 
@@ -81,7 +81,7 @@ class Game:
         sleep(0.8)
         print()
 
-        # There's even more pasta types than mentioned here lol, amazing idea on my part
+        # One of these isn't actually a type of pasta
         AI_PLAYER_NAMES = ("fusilli", "macaroni", "bolognese", "spaghetti", "penne", "farfalle", "fettucine", "riccioli", "rigatoni")
         
         def validatePlayerName(user_input: str):
@@ -186,7 +186,7 @@ class Game:
                 top_card.colour = cli.spinner(" THINKING OF COLOUR TO CHOOSE ...", 2.5, player.think_wild, top_card)
                 console.print(f"[orange3][dim]//[/dim] {player.name} chose to set the card to {top_card.colour}![/orange3]")
             else:
-                top_card.colour = cli.get_colour_choice()
+                top_card.colour = cli.get_colour_choice(top_card.value)
                 console.print(f"[orange3][dim]//[/dim] {player.name} chose to set the card to {top_card.colour}![/orange3]")
 
         elif not self.act_or_draw_4_already_played and (top_card.value == "⊘" or (len(self.players) == 2 and top_card.value == "⇄")):
@@ -249,7 +249,7 @@ class Game:
                             is_draw_4 = True if drawn_card.value == "+ 4" else False
                             drawn_card.colour = cli.spinner(" THINKING OF COLOUR TO CHOOSE ...", 2.5, player.think_wild, top_card, self.players[next_player_index], is_draw_4)
                         else:
-                            drawn_card.colour = cli.get_colour_choice()
+                            drawn_card.colour = cli.get_colour_choice(drawn_card.value)
 
                     console.print(f"[orange3][dim]//[/dim] {"[i]UNO![/i] " if player.uno and len(player.hand) == 2 else ""}" + \
                         f"{player.name} drew a {drawn_card}, and played it![/orange3]")
@@ -268,7 +268,7 @@ class Game:
                         is_draw_4 = True if played_card.value == "+ 4" else False
                         played_card.colour = cli.spinner(" THINKING OF COLOUR TO CHOOSE ...", 2.5, player.think_wild, top_card, self.players[next_player_index], is_draw_4)
                     else:
-                        played_card.colour = cli.get_colour_choice()
+                        played_card.colour = cli.get_colour_choice(played_card.value)
 
                 console.print(f"[orange3][dim]//[/dim] {"[i b]UNO![/i b] " if player.uno and len(player.hand) == 2 else ""}" + \
                     f"{player.name} chose to play a {played_card}![/orange3]")
@@ -326,7 +326,7 @@ class Game:
         print()
         print()
 
-        cli.progress_bar("[dim]///[/dim] [b]REBOOTING ... [/b]", 108, 0.015)
+        cli.progress_bar("[dim]///[/dim] [b]REBOOTING ... [/b]", 108, 0.02)
         cursor.hide()
         print()
 

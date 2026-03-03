@@ -31,17 +31,17 @@ def trueColour(colour):
     return true_colours.get(colour, colour)
 
 def progress_bar(message, number_of_iters, time_per_iter):
-    # Fully customised progress bar, % is stuck as a float tho, imma pretend its intentional lmao
+    # Fully customised progress bar, %s displayed are rounded to 1 decimal place
     progress = Progress(
-        TextColumn("[orange1]{task.description}"),
+        TextColumn("[orange1]{task.description}[/orange1]"),
         BarColumn(bar_width = console.width // 2, style = "orange3 dim", complete_style = "orange3", finished_style = "orange1"),
-        TaskProgressColumn(text_format = "{task.percentage}%",style = "orange3", markup = False),
+        TaskProgressColumn(text_format = " {task.percentage:>5.1f}％",style = "orange3", markup = False),
         refresh_per_second = 25
     )
 
     with progress:
         task = progress.add_task(message, total = number_of_iters)
-        for _ in range(108):
+        for _ in range(number_of_iters):
             sleep(time_per_iter)
             progress.update(task, advance = 1)
 
@@ -241,9 +241,9 @@ def get_card_choice(player, top_card):
     return actual_choice
 
 
-def get_colour_choice():
+def get_colour_choice(wild_card_value):
     choice = inputHandler(
-        "Choose a colour to set the card to: ",
+        f"Choose a colour to set the WILD{' + 4' if wild_card_value == '+ 4' else ''} card to: ",
         assignInputToVar,
         input_type = str,
         valid_choices = ("red", "yellow", "blue", "green")
