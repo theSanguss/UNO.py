@@ -17,7 +17,6 @@ class Card:
         def express_value(val):
             # Keys are reprs, vals are the actual values (alt reverse char -> ⇄)
             # The Unicode "Combining Underline" chars below are intentionally misaligned with 6 and 9, as their positions get shifted upon cloning the repo
-            # To replace any of the special chars used with the cards, you need only modify the statement below 
             val_expressions = {
                 "6̲": "6",
                 "9̲": "9",
